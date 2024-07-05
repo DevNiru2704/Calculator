@@ -4,97 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css-reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
     <title>Basic Calculator</title>
-    <style>
-        html{
-            box-sizing: border-box;
-        }
-
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height:100vh;
-            background-color: rgb(0, 255, 191);
-        }
-
-        .calculator {
-            display: grid;
-            grid-template-columns: repeat(4, 60px); 
-            gap: 10px;
-            padding: 10px;
-            background-color: #333333;
-            border-radius: 5px;
-            justify-content: center; 
-        }
-
-        .calculator input[type="text"] {
-            grid-column: 1 / -1;
-            height: 40px;
-            background-color: #f2f2f2;
-            color: #000;
-            padding-right: 10px;
-            border: none;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .calculator button {
-            height: 40px;
-            width: 60px;
-            background-color: #e0e0e0;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="text"]::placeholder {
-            text-align: center;
-        }
-
-        .calculator button:hover {
-            background-color: #565656;
-            transition: background-color 0.3s ease;
-        }
-
-            .calculator button:active {
-            background-color: #565656;
-            transform: scale(0.95);
-            transition: transform 0.1s ease;
-        }
-        
-    </style>
-
-    <script defer>
-        function press(num) {
-            document.getElementById('display-box').value += num;
-        }
-        function calculate() {
-            document.getElementById('display-box').value = eval(document.getElementById('display-box').value);
-        }
-        function clearDisplay() {
-            document.getElementById('display-box').value = '';
-        }
-
-        function deleteChar() {
-            var display = document.getElementById('display-box');
-            display.value = display.value.slice(0, -1);
-        }
-
-        function addBracket() {
-            var display = document.getElementById('display-box');
-            var openBrackets = (display.value.match(/\(/g) || []).length;
-            var closeBrackets = (display.value.match(/\)/g) || []).length;
-
-            if (openBrackets > closeBrackets) {
-                display.value += ')';
-            } else {
-                display.value += '(';
-            }
-        }
-    </script>
+    
 </head>
 <body>
     <div class="calculator">
